@@ -85,7 +85,6 @@ public class WordleLogic{
   //This function gets called ONCE when the game is very first launched
   //before the player has the opportunity to do anything.
   public static String init() throws FileNotFoundException {
- 
   	try{
       try (BufferedReader reader = new BufferedReader(new FileReader(FILENAME))) {
         String read_line = reader.readLine();
@@ -99,15 +98,9 @@ public class WordleLogic{
         String element = mystery_word.get(rand.nextInt(WORDS_IN_FILE));
         return element;
       }
-       
-       
-      
     } 
-    
     catch(Exception e){
     }
-
-    
     return null; //placeholder: return dummy
   }
   
@@ -125,12 +118,7 @@ public class WordleLogic{
       WordleView.setCellLetter(current_row,--current_col, EMPTY_CHAR);
       current_word[current_col] = ' ';
       System.out.println(Arrays.toString(current_word));
-    }
-  	
-  	
-  	
-  	
-  
+    }	
   }
 
   public static int curWordCount(char check){
@@ -187,7 +175,6 @@ public class WordleLogic{
           handleDuplicates(hold1, inWord, inSecret);
           checked.add(hold1);
         }
-
         else if (inSecret == 0){
           WordleView.setCellColor(current_row, i, WRONG_COLOR);
           update_keyboard(i, WRONG_COLOR);
