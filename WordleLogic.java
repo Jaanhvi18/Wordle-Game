@@ -77,19 +77,13 @@ public class WordleLogic{
     
 
     WordleView.setCellLetter(5,4,'C');
-    WordleView.setCellColor(5,4,WRONG_PLACE_COLOR);
-  	
-  	
-  	
-  	
+    WordleView.setCellColor(5,4,WRONG_PLACE_COLOR);	
   }
   
   
   
   //This function gets called ONCE when the game is very first launched
   //before the player has the opportunity to do anything.
-  //
-  //Returns the chosen mystery word the user needs to guess
   public static String init() throws FileNotFoundException {
  
   	try{
@@ -302,36 +296,18 @@ public class WordleLogic{
   }
   	
   
-  
-  
   //This function gets called everytime the player types a valid letter
-  //on the keyboard or clicks one of the letter keys on the 
-  //graphical keyboard interface.  
-  //The key pressed is passed in as a char uppercase for letter
   public static void inputLetter(char key){
-  	
-  	//Some placeholder debugging code...
   	System.out.println("Letter pressed!: " + key);
   	if (current_col < WORD_LENGTH){
       WordleView.setCellLetter(current_row,current_col++, key);
       current_word[current_col-1] = key;
-    }
-  	
+    }	
   	if (WARM_UP) {
   		
-  		System.out.println("A row should wiggle");
-  		
-  		
-  		
-  		
+  		System.out.println("A row should wiggle");		
   	} 
-  
-  	
-  	
-  	
-  	
   }  
-  
   
   
   //Initializes and launches the game logic and its GUI window
